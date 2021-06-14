@@ -1,0 +1,96 @@
+body {
+    background-color:#bfbfbf;
+}
+
+.central {
+    width: 80%;
+    box-sizing: border-box;
+    padding: 0;
+    margin-left: 10%;
+}
+
+.produtos{
+    background-color: #f2f2f2;
+    border-style: solid;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.caixa-carrinho{
+    background-color: #bfbfbf;
+    border-style: solid;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.carrinho-lista {
+    background-color: #f2f2f2;
+    border-style: solid;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+.remover-button {
+    border-style: solid;
+    text-decoration: none;
+    color: inherit;
+    border-width: 2px;
+    padding: 3px;
+    background-color: #bfbfbf;
+    font-weight: bold;
+}
+
+.add-button {
+    border-style: solid;
+    text-decoration: none;
+    color: inherit;
+    border-width: 2px;
+    padding: 5px;
+    background-color: #bfbfbf;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.reset {
+    border-style: solid;
+    text-decoration: none;
+    color: inherit;
+    border-width: 2px;
+    padding: 5px;
+    background-color: #bfbfbf;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.carrinho {
+    border-style: solid;
+    text-decoration: none;
+    color: inherit;
+    border-width: 2px;
+    padding: 5px;
+    background-color: #bfbfbf;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 20px;
+}
