@@ -14,7 +14,7 @@
                     {{produto.get_nome()}}<br><br>
                     {{produto.get_parcela()}}x de R${{produto.get_valor_parcela()}}<br><br>
                     Ou R${{produto.get_valor()}} à vista<br><br>
-                    <a class="add-button" href=""> + Adicionar ao Carrinho</a>
+                    <a class="add-button" href="{{ url_for('add', id=produto.get_id()) }}"> + Adicionar ao Carrinho</a>
             </section>
             {% endfor %}
             
@@ -23,9 +23,10 @@
                 <h2>Carrinho</h2>
                 {% for carrinho in carrinho_list %}
                     <section class="caixa-carrinho">
-                        {{produto.get_nome()}}<br><br>
-                        {{produto.get_parcela()}}x de R${{produto.get_valor_parcela()}}<br><br>
-                        Ou R${{produto.get_valor()}} à vista<br><br>
+                        {{carrinho.get_nome()}}<br><br>
+                        {{carrinho.get_parcela()}}x de R${{carrinho.get_valor_parcela()}}<br><br>
+                        Ou R${{carrinho.get_valor()}} à vista<br><br>
+                        <a class="delete-button" href="{{ url_for('delete', id=carrinho.get_id()) }}"> - Remover do Carrinho</a>
                     </section>
                 {% endfor %}
             </section>
