@@ -5,31 +5,45 @@
         <title>Buscapé</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}"/>
     </head>
+    <script>
+        function mostra(){
+            if (document.getElementById("carrinho").style.display == "block"){
+                document.getElementById("carrinho").style.display = "none"
+            }
+            else {
+                document.getElementById("carrinho").style.display = "block"
+            }
+        }
+    </script>
     <body>
         <div class="central">
-            <h1>Produtos</h1><br>
-            <a class="carrinho">Carrinho</a> <a class="reset" href="/" >Reset</a>
-            {% for produto in produto_list %}
-            <section class="produtos">
-                    {{produto.get_nome()}}<br><br>
-                    {{produto.get_parcela()}}x de R${{produto.get_valor_parcela()}}<br><br>
-                    Ou R${{produto.get_valor()}} à vista<br><br>
-                    <a class="add-button" href="{{ url_for('add', id=produto.get_id()) }}"> + Adicionar ao Carrinho</a>
-            </section>
-            {% endfor %}
-            
-            
-             <section class="carrinho-lista">
+            <h1>Produtos</h1>
+            <section class="carrinho-lista" id = "carrinho">
                 <h2>Carrinho</h2>
                 {% for carrinho in carrinho_list %}
                     <section class="caixa-carrinho">
+                        {% for img in carrinho.get_img() %}
+                        <img src="{{ img }}" class="img">
+                        {% endfor %}<br>
                         {{carrinho.get_nome()}}<br><br>
                         {{carrinho.get_parcela()}}x de R${{carrinho.get_valor_parcela()}}<br><br>
                         Ou R${{carrinho.get_valor()}} à vista<br><br>
                         <a class="delete-button" href="{{ url_for('delete', id=carrinho.get_id()) }}"> - Remover do Carrinho</a>
                     </section>
                 {% endfor %}
+            </section><br>
+            <a class="button-carrinho" onclick="mostra()">Carrinho</a> <a class="reset" href="/" >Reset</a>
+            {% for produto in produto_list %}
+            <section class="produtos">
+                    {% for img in produto.get_img() %}
+                        <img src="{{ img }}" class="img">
+                    {% endfor %}<br>
+                    {{produto.get_nome()}}<br><br>
+                    {{produto.get_parcela()}}x de R${{produto.get_valor_parcela()}}<br><br>
+                    Ou R${{produto.get_valor()}} à vista<br><br>
+                    <a class="add-button" href="{{ url_for('add', id=produto.get_id()) }}"> + Adicionar ao Carrinho</a>
             </section>
+            {% endfor %}
         </div>
     </body>
 </html>
